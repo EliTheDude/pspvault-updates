@@ -1,6 +1,10 @@
 {
   "version": "0.1.0",
   "minimum_supported_version": "0.1.0",
-  "filename": "PSPVault-Latest.exe",
-  "notes": "First packaged PSP Vault release."
+  "notes": "Initial public PSP Vault release.",
+  "downloads": {
+    "windows": "https://github.com/elithedude/pspvault-updates/releases/download/v0.1.0/PSPVault-Windows-0.1.0.exe",
+    "macos_intel": "https://github.com/elithedude/pspvault-updates/releases/download/v0.1.0/PSPVault-macOS-Intel-0.1.0.zip",
+    "macos_apple_silicon": "https://github.com/elithedude/pspvault-updates/releases/download/v0.1.0/PSPVault-macOS-Apple-Silicon-0.1.0.zip"
+  }
 }
