@@ -1,5 +1,7 @@
 name: Monitor PSP Vault
 
+# Checks PSP Vault availability every 10 minutes.
+
 on:
   workflow_dispatch:
 
