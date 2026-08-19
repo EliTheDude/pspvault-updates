@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>PSP Vault Status</title>
+
+    <style>
+        :root {
+            --background: #f5f6f8;
+            --panel: #ffffff;
+            --text: #202124;
+            --muted: #70757a;
+            --border: #e1e4e8;
+
+            --green: #62a675;
+            --green-light: #eaf5ed;
+
+            --yellow: #d4a94f;
+            --yellow-light: #fff6df;
+
+            --red: #cf6b6b;
+            --red-light: #fdecec;
+
+            --unknown: #d9dde2;
+
+            --gold: #b08a2e;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+        }
+
+        .page {
+            width: min(920px, calc(100% - 32px));
+            margin: 56px auto;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 27px;
+            font-weight: 650;
+            letter-spacing: -0.5px;
+        }
+
+        .brand p {
+            margin: 5px 0 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .overall {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .overall.up {
+            background: var(--green-light);
+            color: #39744a;
+        }
+
+        .overall.degraded {
+            background: var(--yellow-light);
+            color: #8b681f;
+        }
+
+        .overall.down {
+            background: var(--red-light);
+            color: #9b4747;
+        }
+
+        .overall.unknown {
+            background: #eceff2;
+            color: var(--muted);
+        }
+
+        .dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 16px;
+        }
+
+        .card-title {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        .history {
+            display: grid;
+            grid-template-columns: repeat(72, 1fr);
+            gap: 2px;
+            width: 100%;
+            height: 42px;
+            align-items: stretch;
+        }
+
+        .history-block {
+            border-radius: 3px;
+            background: var(--unknown);
+            cursor: default;
+            min-width: 2px;
+        }
+
+        .history-block.up {
+            background: var(--green);
+        }
+
+        .history-block.degraded {
+            background: var(--yellow);
+        }
+
+        .history-block.down {
+            background: var(--red);
+        }
+
+        .history-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .metric {
+            border-top: 1px solid var(--border);
+            padding-top: 14px;
+        }
+
+        .metric-value {
+            font-size: 23px;
+            font-weight: 650;
+            letter-spacing: -0.3px;
+        }
+
+        .metric-label {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .system-item {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px;
+        }
+
+        .system-name {
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 7px;
+        }
+
+        .system-state {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .healthy {
+            color: #39744a;
+        }
+
+        .problem {
+            color: #9b4747;
+        }
+
+        .pending {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pending-number {
+            font-size: 34px;
+            font-weight: 650;
+        }
+
+        .pending-description {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .footer {
+            margin-top: 18px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .page {
+                margin-top: 28px;
+            }
+
+            .header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .metrics,
+            .system-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .history {
+                gap: 1px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page">
+
+        <header class="header">
+
+            <div class="brand">
+                <h1>PSP Vault</h1>
+                <p>System status and availability</p>
+            </div>
+
+            <div
+                id="overall"
+                class="overall unknown"
+            >
+                <span class="dot"></span>
+                <span id="overallText">
+                    Loading status
+                </span>
+            </div>
+
+        </header>
+
+
+        <section class="card">
+
+            <div class="card-title">
+                Server availability · Last 24 hours
+            </div>
+
+            <div
+                id="history"
+                class="history"
+            ></div>
+
+            <div class="history-labels">
+                <span>24 hours ago</span>
+                <span>Now</span>
+            </div>
+
+            <div class="metrics">
+
+                <div class="metric">
+                    <div
+                        id="uptime"
+                        class="metric-value"
+                    >
+                        —
+                    </div>
+
+                    <div class="metric-label">
+                        Uptime
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <div
+                        id="response"
+                        class="metric-value"
+                    >
+                        —
+                    </div>
+
+                    <div class="metric-label">
+                        Average response
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <div
+                        id="lastCheck"
+                        class="metric-value"
+                    >
+                        —
+                    </div>
+
+                    <div class="metric-label">
+                        Last check
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="card">
+
+            <div class="card-title">
+                System
+            </div>
+
+            <div class="system-grid">
+
+                <div class="system-item">
+                    <div class="system-name">
+                        Database
+                    </div>
+
+                    <div
+                        id="database"
+                        class="system-state"
+                    >
+                        —
+                    </div>
+                </div>
+
+                <div class="system-item">
+                    <div class="system-name">
+                        Vault storage
+                    </div>
+
+                    <div
+                        id="storage"
+                        class="system-state"
+                    >
+                        —
+                    </div>
+                </div>
+
+                <div class="system-item">
+                    <div class="system-name">
+                        Backup storage
+                    </div>
+
+                    <div
+                        id="backup"
+                        class="system-state"
+                    >
+                        —
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="card">
+
+            <div class="card-title">
+                Administration
+            </div>
+
+            <div class="pending">
+
+                <div>
+                    <div
+                        id="pending"
+                        class="pending-number"
+                    >
+                        —
+                    </div>
+
+                    <div class="pending-description">
+                        Pending access requests
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div
+            id="updated"
+            class="footer"
+        >
+            Loading monitoring data…
+        </div>
+
+    </main>
+
+
+    <script>
+        const DATA_URL =
+            "https://raw.githubusercontent.com/elithedude/pspvault-updates/status-data/status-history.json";
+
+
+        function statusText(status) {
+            if (status === "up") {
+                return "All systems operational";
+            }
+
+            if (status === "degraded") {
+                return "Performance degraded";
+            }
+
+            if (status === "down") {
+                return "Server unavailable";
+            }
+
+            return "Status unavailable";
+        }
+
+
+        function setHealthElement(id, value) {
+            const element =
+                document.getElementById(id);
+
+            if (value === true) {
+                element.textContent =
+                    "● Healthy";
+
+                element.className =
+                    "system-state healthy";
+
+            } else if (value === false) {
+                element.textContent =
+                    "● Problem detected";
+
+                element.className =
+                    "system-state problem";
+
+            } else {
+                element.textContent =
+                    "—";
+
+                element.className =
+                    "system-state";
+            }
+        }
+
+
+        function relativeTime(timestamp) {
+            if (!timestamp) {
+                return "—";
+            }
+
+            const seconds =
+                Math.max(
+                    0,
+                    Math.floor(
+                        (
+                            Date.now()
+                            -
+                            new Date(timestamp).getTime()
+                        )
+                        / 1000
+                    )
+                );
+
+            if (seconds < 60) {
+                return `${seconds}s ago`;
+            }
+
+            const minutes =
+                Math.floor(
+                    seconds / 60
+                );
+
+            if (minutes < 60) {
+                return `${minutes}m ago`;
+            }
+
+            const hours =
+                Math.floor(
+                    minutes / 60
+                );
+
+            return `${hours}h ago`;
+        }
+
+
+        function buildHistory(samples) {
+
+            const history =
+                document.getElementById(
+                    "history"
+                );
+
+            history.innerHTML = "";
+
+            const now =
+                Date.now();
+
+            const windowStart =
+                now - 24 * 60 * 60 * 1000;
+
+            const bucketCount = 72;
+
+            const bucketDuration =
+                (
+                    24
+                    * 60
+                    * 60
+                    * 1000
+                )
+                / bucketCount;
+
+            const buckets =
+                Array.from(
+                    {
+                        length: bucketCount
+                    },
+                    () => []
+                );
+
+
+            for (const sample of samples) {
+
+                const timestamp =
+                    new Date(
+                        sample.timestamp
+                    ).getTime();
+
+                if (
+                    timestamp < windowStart
+                    ||
+                    timestamp > now
+                ) {
+                    continue;
+                }
+
+                let index =
+                    Math.floor(
+                        (
+                            timestamp
+                            -
+                            windowStart
+                        )
+                        / bucketDuration
+                    );
+
+                index =
+                    Math.max(
+                        0,
+                        Math.min(
+                            bucketCount - 1,
+                            index
+                        )
+                    );
+
+                buckets[index].push(
+                    sample
+                );
+            }
+
+
+            buckets.forEach(
+                (
+                    bucket,
+                    index
+                ) => {
+
+                    const block =
+                        document.createElement(
+                            "div"
+                        );
+
+                    block.className =
+                        "history-block";
+
+                    let status =
+                        "unknown";
+
+                    if (
+                        bucket.some(
+                            sample =>
+                                sample.status ===
+                                "down"
+                        )
+                    ) {
+                        status =
+                            "down";
+
+                    } else if (
+                        bucket.some(
+                            sample =>
+                                sample.status ===
+                                "degraded"
+                        )
+                    ) {
+                        status =
+                            "degraded";
+
+                    } else if (
+                        bucket.some(
+                            sample =>
+                                sample.status ===
+                                "up"
+                        )
+                    ) {
+                        status =
+                            "up";
+                    }
+
+                    block.classList.add(
+                        status
+                    );
+
+                    const start =
+                        new Date(
+                            windowStart
+                            +
+                            index
+                            *
+                            bucketDuration
+                        );
+
+                    const end =
+                        new Date(
+                            windowStart
+                            +
+                            (
+                                index + 1
+                            )
+                            *
+                            bucketDuration
+                        );
+
+                    const responses =
+                        bucket
+                        .map(
+                            sample =>
+                                sample.response_ms
+                        )
+                        .filter(
+                            value =>
+                                typeof value ===
+                                "number"
+                        );
+
+                    const average =
+                        responses.length
+                            ? Math.round(
+                                responses.reduce(
+                                    (
+                                        a,
+                                        b
+                                    ) =>
+                                        a + b,
+                                    0
+                                )
+                                /
+                                responses.length
+                            )
+                            : null;
+
+                    block.title =
+                        [
+                            `${start.toLocaleTimeString([], {
+                                hour: "numeric",
+                                minute: "2-digit"
+                            })} – ${end.toLocaleTimeString([], {
+                                hour: "numeric",
+                                minute: "2-digit"
+                            })}`,
+                            `Status: ${status}`,
+                            `Checks: ${bucket.length}`,
+                            average !== null
+                                ? `Average response: ${average} ms`
+                                : "No response data"
+                        ].join("\n");
+
+                    history.appendChild(
+                        block
+                    );
+                }
+            );
+        }
+
+
+        async function loadStatus() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        `${DATA_URL}?t=${Date.now()}`,
+                        {
+                            cache: "no-store"
+                        }
+                    );
+
+                if (!response.ok) {
+                    throw new Error(
+                        "Status data unavailable"
+                    );
+                }
+
+                const data =
+                    await response.json();
+
+                const samples =
+                    Array.isArray(
+                        data.samples
+                    )
+                        ? data.samples
+                        : [];
+
+                buildHistory(
+                    samples
+                );
+
+                if (!samples.length) {
+                    return;
+                }
+
+                const latest =
+                    samples[
+                        samples.length - 1
+                    ];
+
+                const overall =
+                    document.getElementById(
+                        "overall"
+                    );
+
+                overall.className =
+                    `overall ${latest.status}`;
+
+                document.getElementById(
+                    "overallText"
+                ).textContent =
+                    statusText(
+                        latest.status
+                    );
+
+
+                const knownChecks =
+                    samples.filter(
+                        sample =>
+                            [
+                                "up",
+                                "degraded",
+                                "down"
+                            ].includes(
+                                sample.status
+                            )
+                    );
+
+                const availableChecks =
+                    knownChecks.filter(
+                        sample =>
+                            sample.status !==
+                            "down"
+                    );
+
+                const uptime =
+                    knownChecks.length
+                        ? (
+                            availableChecks.length
+                            /
+                            knownChecks.length
+                            *
+                            100
+                        )
+                        : 0;
+
+                document.getElementById(
+                    "uptime"
+                ).textContent =
+                    `${uptime.toFixed(2)}%`;
+
+
+                const responseTimes =
+                    samples
+                    .filter(
+                        sample =>
+                            sample.status !==
+                            "down"
+                    )
+                    .map(
+                        sample =>
+                            sample.response_ms
+                    )
+                    .filter(
+                        value =>
+                            typeof value ===
+                            "number"
+                    );
+
+                const averageResponse =
+                    responseTimes.length
+                        ? Math.round(
+                            responseTimes.reduce(
+                                (
+                                    a,
+                                    b
+                                ) =>
+                                    a + b,
+                                0
+                            )
+                            /
+                            responseTimes.length
+                        )
+                        : null;
+
+                document.getElementById(
+                    "response"
+                ).textContent =
+                    averageResponse === null
+                        ? "—"
+                        : `${averageResponse} ms`;
+
+                document.getElementById(
+                    "lastCheck"
+                ).textContent =
+                    relativeTime(
+                        latest.timestamp
+                    );
+
+
+                document.getElementById(
+                    "pending"
+                ).textContent =
+                    latest.pending_requests ??
+                    "—";
+
+
+                setHealthElement(
+                    "database",
+                    latest.database_ok
+                );
+
+                setHealthElement(
+                    "storage",
+                    latest.storage_ok
+                );
+
+                setHealthElement(
+                    "backup",
+                    latest.backup_storage_ok
+                );
+
+
+                document.getElementById(
+                    "updated"
+                ).textContent =
+                    `Last monitoring check: ${
+                        new Date(
+                            latest.timestamp
+                        ).toLocaleString()
+                    }`;
+
+            } catch (error) {
+
+                document.getElementById(
+                    "overallText"
+                ).textContent =
+                    "Monitoring unavailable";
+
+                document.getElementById(
+                    "updated"
+                ).textContent =
+                    "Could not load monitoring history.";
+            }
+        }
+
+
+        loadStatus();
+
+        setInterval(
+            loadStatus,
+            60 * 1000
+        );
+    </script>
+
+</body>
+</html>
