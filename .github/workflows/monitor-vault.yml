@@ -146,6 +146,7 @@ jobs:
           PY
 
       - name: Build rolling 24 hour history
+        id: history
         shell: bash
         run: |
           git fetch origin status-data || true
@@ -158,6 +159,7 @@ jobs:
 
           python - <<'PY'
           import json
+          import os
           from datetime import datetime, timezone, timedelta
 
           try:
@@ -184,6 +186,32 @@ jobs:
               "samples",
               []
           )
+
+          previous_status = None
+
+          if samples:
+              previous_status = samples[-1].get(
+                  "status"
+              )
+
+          current_status = current.get(
+              "status"
+          )
+
+          alert = "none"
+
+          if (
+              previous_status is not None
+              and previous_status != "down"
+              and current_status == "down"
+          ):
+              alert = "down"
+
+          elif (
+              previous_status == "down"
+              and current_status != "down"
+          ):
+              alert = "recovered"
 
           samples.append(
               current
@@ -232,6 +260,156 @@ jobs:
 
           print(
               f"Saved {len(kept)} samples."
+          )
+
+          print(
+              f"Previous status: {previous_status}"
+          )
+
+          print(
+              f"Current status: {current_status}"
+          )
+
+          print(
+              f"Alert: {alert}"
+          )
+
+          github_output = os.environ[
+              "GITHUB_OUTPUT"
+          ]
+
+          with open(
+              github_output,
+              "a",
+              encoding="utf-8"
+          ) as f:
+              f.write(
+                  f"alert={alert}\n"
+              )
+
+              f.write(
+                  f"current_status={current_status}\n"
+              )
+          PY
+
+      - name: Send outage email
+        if: steps.history.outputs.alert == 'down'
+        env:
+          EMAIL_FROM: ${{ secrets.ALERT_EMAIL_FROM }}
+          EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
+          EMAIL_APP_PASSWORD: ${{ secrets.ALERT_EMAIL_APP_PASSWORD }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import smtplib
+          from email.message import EmailMessage
+
+          with open(
+              "current-status.json",
+              "r",
+              encoding="utf-8"
+          ) as f:
+              status = json.load(f)
+
+          message = EmailMessage()
+
+          message["Subject"] = (
+              "PSP Vault is offline"
+          )
+
+          message["From"] = (
+              os.environ["EMAIL_FROM"]
+          )
+
+          message["To"] = (
+              os.environ["EMAIL_TO"]
+          )
+
+          message.set_content(
+              "PSP Vault could not be reached from GitHub.\n\n"
+              f"Time: {status.get('timestamp', 'unknown')}\n"
+              f"HTTP status: {status.get('http_status')}\n"
+              f"Response time: {status.get('response_ms')} ms\n"
+              f"Error: {status.get('error', 'none')}\n"
+          )
+
+          with smtplib.SMTP_SSL(
+              "smtp.gmail.com",
+              465
+          ) as smtp:
+              smtp.login(
+                  os.environ["EMAIL_FROM"],
+                  os.environ["EMAIL_APP_PASSWORD"]
+              )
+
+              smtp.send_message(
+                  message
+              )
+
+          print(
+              "Outage email sent."
+          )
+          PY
+
+      - name: Send recovery email
+        if: steps.history.outputs.alert == 'recovered'
+        env:
+          EMAIL_FROM: ${{ secrets.ALERT_EMAIL_FROM }}
+          EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
+          EMAIL_APP_PASSWORD: ${{ secrets.ALERT_EMAIL_APP_PASSWORD }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import smtplib
+          from email.message import EmailMessage
+
+          with open(
+              "current-status.json",
+              "r",
+              encoding="utf-8"
+          ) as f:
+              status = json.load(f)
+
+          message = EmailMessage()
+
+          message["Subject"] = (
+              "PSP Vault is back online"
+          )
+
+          message["From"] = (
+              os.environ["EMAIL_FROM"]
+          )
+
+          message["To"] = (
+              os.environ["EMAIL_TO"]
+          )
+
+          message.set_content(
+              "PSP Vault is reachable again.\n\n"
+              f"Time: {status.get('timestamp', 'unknown')}\n"
+              f"Status: {status.get('status')}\n"
+              f"Response time: {status.get('response_ms')} ms\n"
+          )
+
+          with smtplib.SMTP_SSL(
+              "smtp.gmail.com",
+              465
+          ) as smtp:
+              smtp.login(
+                  os.environ["EMAIL_FROM"],
+                  os.environ["EMAIL_APP_PASSWORD"]
+              )
+
+              smtp.send_message(
+                  message
+              )
+
+          print(
+              "Recovery email sent."
           )
           PY
 
