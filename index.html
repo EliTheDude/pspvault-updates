@@ -528,7 +528,6 @@
 
 
         function buildHistory(samples) {
-
             const history =
                 document.getElementById(
                     "history"
@@ -555,15 +554,11 @@
 
             const buckets =
                 Array.from(
-                    {
-                        length: bucketCount
-                    },
+                    { length: bucketCount },
                     () => []
                 );
 
-
             for (const sample of samples) {
-
                 const timestamp =
                     new Date(
                         sample.timestamp
@@ -601,13 +596,11 @@
                 );
             }
 
-
             buckets.forEach(
                 (
                     bucket,
                     index
                 ) => {
-
                     const block =
                         document.createElement(
                             "div"
@@ -727,9 +720,7 @@
 
 
         async function loadStatus() {
-
             try {
-
                 const response =
                     await fetch(
                         `${DATA_URL}?t=${Date.now()}`,
@@ -759,6 +750,11 @@
                 );
 
                 if (!samples.length) {
+                    document.getElementById(
+                        "updated"
+                    ).textContent =
+                        "Waiting for monitoring data…";
+
                     return;
                 }
 
@@ -781,7 +777,6 @@
                     statusText(
                         latest.status
                     );
-
 
                 const knownChecks =
                     samples.filter(
@@ -817,7 +812,6 @@
                     "uptime"
                 ).textContent =
                     `${uptime.toFixed(2)}%`;
-
 
                 const responseTimes =
                     samples
@@ -866,13 +860,11 @@
                         latest.timestamp
                     );
 
-
                 document.getElementById(
                     "pending"
                 ).textContent =
                     latest.pending_requests ??
                     "—";
-
 
                 setHealthElement(
                     "database",
@@ -889,7 +881,6 @@
                     latest.backup_storage_ok
                 );
 
-
                 document.getElementById(
                     "updated"
                 ).textContent =
@@ -900,6 +891,17 @@
                     }`;
 
             } catch (error) {
+                console.error(
+                    error
+                );
+
+                const overall =
+                    document.getElementById(
+                        "overall"
+                    );
+
+                overall.className =
+                    "overall unknown";
 
                 document.getElementById(
                     "overallText"
