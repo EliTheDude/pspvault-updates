@@ -1,0 +1,262 @@
+name: Monitor PSP Vault
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "3,13,23,33,43,53 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Check PSP Vault
+        env:
+          HEALTH_URL: ${{ secrets.PSP_VAULT_HEALTH_URL }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import time
+          import urllib.error
+          import urllib.request
+          from datetime import datetime, timezone
+
+          url = os.environ["HEALTH_URL"]
+
+          result = {
+              "timestamp": datetime.now(timezone.utc).isoformat(),
+              "status": "down",
+              "response_ms": None,
+              "http_status": None,
+              "pending_requests": None,
+              "database_ok": None,
+              "storage_ok": None,
+              "backup_storage_ok": None,
+          }
+
+          start = time.perf_counter()
+
+          try:
+              request = urllib.request.Request(
+                  url,
+                  headers={
+                      "User-Agent": "PSP-Vault-GitHub-Monitor"
+                  },
+              )
+
+              with urllib.request.urlopen(
+                  request,
+                  timeout=15
+              ) as response:
+                  elapsed_ms = (
+                      time.perf_counter() - start
+                  ) * 1000
+
+                  result["response_ms"] = round(
+                      elapsed_ms,
+                      1
+                  )
+
+                  result["http_status"] = (
+                      response.status
+                  )
+
+                  payload = json.loads(
+                      response.read().decode("utf-8")
+                  )
+
+                  result["pending_requests"] = (
+                      payload.get(
+                          "pending_requests"
+                      )
+                  )
+
+                  result["database_ok"] = (
+                      payload.get(
+                          "database_ok"
+                      )
+                  )
+
+                  result["storage_ok"] = (
+                      payload.get(
+                          "storage_ok"
+                      )
+                  )
+
+                  result["backup_storage_ok"] = (
+                      payload.get(
+                          "backup_storage_ok"
+                      )
+                  )
+
+                  server_status = payload.get(
+                      "status"
+                  )
+
+                  if server_status != "ok":
+                      result["status"] = "degraded"
+
+                  elif elapsed_ms >= 1000:
+                      result["status"] = "degraded"
+
+                  else:
+                      result["status"] = "up"
+
+          except Exception as exc:
+              elapsed_ms = (
+                  time.perf_counter() - start
+              ) * 1000
+
+              result["response_ms"] = round(
+                  elapsed_ms,
+                  1
+              )
+
+              result["error"] = (
+                  type(exc).__name__
+              )
+
+          with open(
+              "current-status.json",
+              "w",
+              encoding="utf-8"
+          ) as f:
+              json.dump(
+                  result,
+                  f,
+                  indent=2
+              )
+
+          print(
+              json.dumps(
+                  result,
+                  indent=2
+              )
+          )
+          PY
+
+      - name: Build rolling 24 hour history
+        shell: bash
+        run: |
+          git fetch origin status-data || true
+
+          if git show origin/status-data:status-history.json > previous-status-history.json 2>/dev/null; then
+              echo "Loaded previous status history."
+          else
+              echo '{"samples":[]}' > previous-status-history.json
+          fi
+
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone, timedelta
+
+          try:
+              with open(
+                  "previous-status-history.json",
+                  "r",
+                  encoding="utf-8"
+              ) as f:
+                  history = json.load(f)
+
+          except Exception:
+              history = {
+                  "samples": []
+              }
+
+          with open(
+              "current-status.json",
+              "r",
+              encoding="utf-8"
+          ) as f:
+              current = json.load(f)
+
+          samples = history.get(
+              "samples",
+              []
+          )
+
+          samples.append(
+              current
+          )
+
+          cutoff = (
+              datetime.now(timezone.utc)
+              - timedelta(hours=24)
+          )
+
+          kept = []
+
+          for sample in samples:
+              try:
+                  sample_time = (
+                      datetime.fromisoformat(
+                          sample["timestamp"]
+                      )
+                  )
+
+                  if sample_time >= cutoff:
+                      kept.append(
+                          sample
+                      )
+
+              except Exception:
+                  pass
+
+          output = {
+              "generated_at": datetime.now(
+                  timezone.utc
+              ).isoformat(),
+              "samples": kept,
+          }
+
+          with open(
+              "status-history.json",
+              "w",
+              encoding="utf-8"
+          ) as f:
+              json.dump(
+                  output,
+                  f,
+                  indent=2
+              )
+
+          print(
+              f"Saved {len(kept)} samples."
+          )
+          PY
+
+      - name: Publish status history
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          rm -rf status-publish
+          mkdir status-publish
+
+          cp status-history.json status-publish/
+
+          cd status-publish
+
+          git init
+          git checkout -b status-data
+
+          git config user.name "PSP Vault Monitor"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add status-history.json
+          git commit -m "Update PSP Vault status"
+
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+          git push --force origin status-data
