@@ -1,10 +1,10 @@
 {
-  "version": "0.2.0",
-  "minimum_supported_version": "0.2.0",
+  "version": "0.2.1",
+  "minimum_supported_version": "0.2.1",
   "notes": "Adds Project workspaces, Project checkout and check-in, NX assembly dependency handling, workspace reconciliation, and expanded review support.",
   "downloads": {
-    "windows": "https://github.com/elithedude/pspvault-updates/releases/download/v0.2.0/PSPVault-Windows-0.2.0.exe",
-    "macos_intel": "https://github.com/elithedude/pspvault-updates/releases/download/v0.2.0/PSPVault-macOS-Intel-0.2.0.zip",
-    "macos_apple_silicon": "https://github.com/elithedude/pspvault-updates/releases/download/v0.2.0/PSPVault-macOS-Apple-Silicon-0.2.0.zip"
+    "windows": "https://github.com/elithedude/pspvault-updates/releases/download/v0.2.1/PSPVault-Windows-0.2.1.exe",
+    "macos_intel": "https://github.com/elithedude/pspvault-updates/releases/download/v0.2.1/PSPVault-macOS-Intel-0.2.1.zip",
+    "macos_apple_silicon": "https://github.com/elithedude/pspvault-updates/releases/download/v0.2.1/PSPVault-macOS-Apple-Silicon-0.2.1.zip"
   }
 }
