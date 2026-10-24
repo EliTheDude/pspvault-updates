@@ -1,0 +1,1455 @@
+{
+  "generated_at": "2026-10-24T21:20:45.216103+00:00",
+  "samples": [
+    {
+      "timestamp": "2026-10-23T21:20:46.413493+00:00",
+      "status": "up",
+      "response_ms": 479.4,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T21:31:06.510819+00:00",
+      "status": "up",
+      "response_ms": 575.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T21:40:47.429808+00:00",
+      "status": "up",
+      "response_ms": 713.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T21:50:47.357136+00:00",
+      "status": "up",
+      "response_ms": 368.5,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T22:01:25.369425+00:00",
+      "status": "up",
+      "response_ms": 378.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T22:10:46.604486+00:00",
+      "status": "up",
+      "response_ms": 608.4,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T22:20:45.588903+00:00",
+      "status": "up",
+      "response_ms": 646.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T22:31:04.303798+00:00",
+      "status": "up",
+      "response_ms": 902.5,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T22:40:45.686719+00:00",
+      "status": "up",
+      "response_ms": 322.5,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T22:50:44.356324+00:00",
+      "status": "up",
+      "response_ms": 513.5,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T23:01:21.010925+00:00",
+      "status": "up",
+      "response_ms": 443.6,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T23:10:42.572114+00:00",
+      "status": "up",
+      "response_ms": 569.5,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T23:20:46.306679+00:00",
+      "status": "up",
+      "response_ms": 364.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T23:31:04.446067+00:00",
+      "status": "up",
+      "response_ms": 433.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T23:40:45.320775+00:00",
+      "status": "up",
+      "response_ms": 717.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-23T23:50:45.190581+00:00",
+      "status": "up",
+      "response_ms": 463.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T00:01:24.365429+00:00",
+      "status": "up",
+      "response_ms": 485.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T00:10:45.477694+00:00",
+      "status": "up",
+      "response_ms": 488.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T00:20:44.012489+00:00",
+      "status": "degraded",
+      "response_ms": 2441.6,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T00:31:05.964660+00:00",
+      "status": "up",
+      "response_ms": 678.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T00:40:42.699320+00:00",
+      "status": "up",
+      "response_ms": 482.4,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T00:50:42.817068+00:00",
+      "status": "up",
+      "response_ms": 365.6,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T01:01:22.730066+00:00",
+      "status": "up",
+      "response_ms": 492.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T01:10:43.528439+00:00",
+      "status": "up",
+      "response_ms": 528.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T01:20:41.834027+00:00",
+      "status": "up",
+      "response_ms": 527.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T01:31:02.461141+00:00",
+      "status": "up",
+      "response_ms": 421.0,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T01:40:43.568600+00:00",
+      "status": "degraded",
+      "response_ms": 2012.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T01:50:42.192962+00:00",
+      "status": "up",
+      "response_ms": 344.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T02:01:18.775291+00:00",
+      "status": "degraded",
+      "response_ms": 2128.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T02:10:42.482850+00:00",
+      "status": "up",
+      "response_ms": 377.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T02:20:45.369394+00:00",
+      "status": "up",
+      "response_ms": 311.5,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T02:31:05.383937+00:00",
+      "status": "up",
+      "response_ms": 547.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T02:40:43.860953+00:00",
+      "status": "up",
+      "response_ms": 425.6,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T02:50:43.142514+00:00",
+      "status": "degraded",
+      "response_ms": 4678.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T03:01:24.077828+00:00",
+      "status": "up",
+      "response_ms": 504.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T03:10:42.429355+00:00",
+      "status": "up",
+      "response_ms": 406.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T03:20:45.914411+00:00",
+      "status": "up",
+      "response_ms": 471.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T03:31:04.855631+00:00",
+      "status": "degraded",
+      "response_ms": 1747.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T03:40:43.334869+00:00",
+      "status": "up",
+      "response_ms": 316.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T03:50:44.634238+00:00",
+      "status": "up",
+      "response_ms": 307.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T04:01:19.316938+00:00",
+      "status": "up",
+      "response_ms": 288.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T04:10:43.744701+00:00",
+      "status": "up",
+      "response_ms": 301.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T04:20:44.850154+00:00",
+      "status": "up",
+      "response_ms": 726.6,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T04:31:03.404631+00:00",
+      "status": "up",
+      "response_ms": 454.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T04:40:45.387288+00:00",
+      "status": "up",
+      "response_ms": 524.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T04:50:43.056868+00:00",
+      "status": "up",
+      "response_ms": 455.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T05:01:22.347794+00:00",
+      "status": "up",
+      "response_ms": 325.0,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T05:10:43.649831+00:00",
+      "status": "degraded",
+      "response_ms": 2415.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T05:20:48.101320+00:00",
+      "status": "up",
+      "response_ms": 527.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T05:31:03.882685+00:00",
+      "status": "up",
+      "response_ms": 339.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T05:40:46.390686+00:00",
+      "status": "up",
+      "response_ms": 726.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T05:50:44.826926+00:00",
+      "status": "up",
+      "response_ms": 521.0,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T06:01:21.901716+00:00",
+      "status": "degraded",
+      "response_ms": 2212.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T06:10:43.065799+00:00",
+      "status": "up",
+      "response_ms": 521.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T06:20:47.014348+00:00",
+      "status": "up",
+      "response_ms": 353.0,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T06:31:07.805845+00:00",
+      "status": "up",
+      "response_ms": 619.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T06:40:46.467633+00:00",
+      "status": "up",
+      "response_ms": 595.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T06:50:43.593417+00:00",
+      "status": "up",
+      "response_ms": 451.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T07:01:21.183396+00:00",
+      "status": "up",
+      "response_ms": 445.4,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T07:10:44.560477+00:00",
+      "status": "up",
+      "response_ms": 465.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T07:20:44.811238+00:00",
+      "status": "up",
+      "response_ms": 701.6,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T07:31:05.501480+00:00",
+      "status": "up",
+      "response_ms": 509.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T07:40:44.440695+00:00",
+      "status": "up",
+      "response_ms": 333.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T07:50:45.242282+00:00",
+      "status": "degraded",
+      "response_ms": 2232.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T08:01:21.925510+00:00",
+      "status": "up",
+      "response_ms": 354.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T08:10:49.649544+00:00",
+      "status": "up",
+      "response_ms": 690.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T08:20:46.218904+00:00",
+      "status": "up",
+      "response_ms": 470.4,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T08:31:05.993182+00:00",
+      "status": "degraded",
+      "response_ms": 1814.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T08:40:47.491487+00:00",
+      "status": "up",
+      "response_ms": 558.4,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T08:50:45.596449+00:00",
+      "status": "up",
+      "response_ms": 449.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T09:01:26.509587+00:00",
+      "status": "up",
+      "response_ms": 595.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T09:10:45.362515+00:00",
+      "status": "up",
+      "response_ms": 543.6,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T09:20:46.555657+00:00",
+      "status": "degraded",
+      "response_ms": 1753.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T09:31:07.167152+00:00",
+      "status": "up",
+      "response_ms": 687.5,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T09:40:47.538261+00:00",
+      "status": "up",
+      "response_ms": 468.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T09:50:47.163986+00:00",
+      "status": "up",
+      "response_ms": 451.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T10:01:23.765879+00:00",
+      "status": "degraded",
+      "response_ms": 3077.6,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T10:10:47.782106+00:00",
+      "status": "up",
+      "response_ms": 425.6,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T10:20:44.635875+00:00",
+      "status": "up",
+      "response_ms": 358.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T10:31:09.330882+00:00",
+      "status": "up",
+      "response_ms": 555.5,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T10:40:46.518796+00:00",
+      "status": "up",
+      "response_ms": 673.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T10:50:46.575192+00:00",
+      "status": "degraded",
+      "response_ms": 2908.5,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T11:01:22.150404+00:00",
+      "status": "degraded",
+      "response_ms": 2313.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T11:10:45.403841+00:00",
+      "status": "up",
+      "response_ms": 673.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T11:20:49.889379+00:00",
+      "status": "up",
+      "response_ms": 397.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T11:31:05.124637+00:00",
+      "status": "up",
+      "response_ms": 585.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T11:40:47.604912+00:00",
+      "status": "up",
+      "response_ms": 679.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T11:50:49.155705+00:00",
+      "status": "up",
+      "response_ms": 528.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T12:01:20.924224+00:00",
+      "status": "up",
+      "response_ms": 339.6,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T12:10:46.956181+00:00",
+      "status": "up",
+      "response_ms": 372.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T12:20:44.429528+00:00",
+      "status": "up",
+      "response_ms": 428.0,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T12:31:08.305237+00:00",
+      "status": "up",
+      "response_ms": 950.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T12:40:42.911954+00:00",
+      "status": "degraded",
+      "response_ms": 1738.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T12:50:46.502628+00:00",
+      "status": "degraded",
+      "response_ms": 1766.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T13:01:21.151227+00:00",
+      "status": "up",
+      "response_ms": 496.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T13:10:48.225102+00:00",
+      "status": "up",
+      "response_ms": 576.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T13:20:46.967970+00:00",
+      "status": "up",
+      "response_ms": 614.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T13:31:06.209151+00:00",
+      "status": "up",
+      "response_ms": 473.4,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T13:40:44.548725+00:00",
+      "status": "degraded",
+      "response_ms": 1720.4,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T13:50:46.705669+00:00",
+      "status": "up",
+      "response_ms": 363.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T14:01:20.259313+00:00",
+      "status": "up",
+      "response_ms": 385.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T14:10:43.593246+00:00",
+      "status": "up",
+      "response_ms": 612.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T14:20:46.442241+00:00",
+      "status": "up",
+      "response_ms": 941.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T14:31:14.057237+00:00",
+      "status": "up",
+      "response_ms": 382.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T14:40:46.929271+00:00",
+      "status": "up",
+      "response_ms": 444.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T14:50:47.301662+00:00",
+      "status": "up",
+      "response_ms": 439.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T15:01:24.685450+00:00",
+      "status": "up",
+      "response_ms": 600.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T15:10:50.406767+00:00",
+      "status": "up",
+      "response_ms": 571.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T15:20:54.075355+00:00",
+      "status": "up",
+      "response_ms": 421.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T15:31:07.385672+00:00",
+      "status": "up",
+      "response_ms": 461.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T15:40:45.677024+00:00",
+      "status": "up",
+      "response_ms": 335.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T15:50:46.376888+00:00",
+      "status": "up",
+      "response_ms": 320.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T16:01:21.284274+00:00",
+      "status": "up",
+      "response_ms": 300.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T16:10:45.587882+00:00",
+      "status": "up",
+      "response_ms": 414.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T16:20:44.248997+00:00",
+      "status": "up",
+      "response_ms": 380.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T16:31:09.152005+00:00",
+      "status": "up",
+      "response_ms": 318.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T16:40:46.730580+00:00",
+      "status": "degraded",
+      "response_ms": 3784.5,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T16:50:48.723923+00:00",
+      "status": "up",
+      "response_ms": 446.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T17:01:21.403779+00:00",
+      "status": "degraded",
+      "response_ms": 2396.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T17:10:50.733519+00:00",
+      "status": "up",
+      "response_ms": 421.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T17:20:47.091555+00:00",
+      "status": "up",
+      "response_ms": 370.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T17:31:03.498094+00:00",
+      "status": "up",
+      "response_ms": 736.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T17:40:45.441988+00:00",
+      "status": "up",
+      "response_ms": 313.4,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T17:50:43.193315+00:00",
+      "status": "up",
+      "response_ms": 592.0,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T18:01:21.295242+00:00",
+      "status": "degraded",
+      "response_ms": 2489.6,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T18:10:44.679865+00:00",
+      "status": "degraded",
+      "response_ms": 3933.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T18:20:46.767587+00:00",
+      "status": "up",
+      "response_ms": 276.0,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T18:31:05.771489+00:00",
+      "status": "degraded",
+      "response_ms": 1814.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T18:40:50.012139+00:00",
+      "status": "degraded",
+      "response_ms": 2705.4,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T18:50:45.102903+00:00",
+      "status": "degraded",
+      "response_ms": 1727.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T19:01:22.917928+00:00",
+      "status": "up",
+      "response_ms": 627.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T19:10:44.345049+00:00",
+      "status": "up",
+      "response_ms": 407.1,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T19:20:46.989611+00:00",
+      "status": "up",
+      "response_ms": 660.2,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T19:31:07.834833+00:00",
+      "status": "up",
+      "response_ms": 607.7,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T19:40:44.385508+00:00",
+      "status": "up",
+      "response_ms": 301.0,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T19:50:41.696459+00:00",
+      "status": "up",
+      "response_ms": 301.9,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T20:01:18.019008+00:00",
+      "status": "up",
+      "response_ms": 525.4,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T20:10:45.224223+00:00",
+      "status": "up",
+      "response_ms": 581.0,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T20:20:44.208440+00:00",
+      "status": "up",
+      "response_ms": 347.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T20:31:02.828208+00:00",
+      "status": "degraded",
+      "response_ms": 3595.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T20:40:43.992404+00:00",
+      "status": "degraded",
+      "response_ms": 2426.6,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T20:50:47.068325+00:00",
+      "status": "degraded",
+      "response_ms": 3372.3,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T21:01:21.932940+00:00",
+      "status": "up",
+      "response_ms": 391.0,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T21:10:45.868826+00:00",
+      "status": "up",
+      "response_ms": 581.4,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    },
+    {
+      "timestamp": "2026-10-24T21:20:44.614140+00:00",
+      "status": "up",
+      "response_ms": 307.8,
+      "http_status": 200,
+      "pending_requests": 0,
+      "database_ok": true,
+      "storage_ok": true,
+      "backup_storage_ok": true
+    }
+  ]
+}
